@@ -12,7 +12,10 @@ namespace coup{
 
     }
     //Blocks an Ambassador or a different Captain from stealing 2 coins.
-    void Captain::block(Player& p){
+    void Captain::block(Ambassador& p){
+        
+    }
+    void Captain::block(Captain& c1){
         
     }
 }
