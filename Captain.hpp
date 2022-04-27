@@ -4,6 +4,7 @@
 
 namespace coup{
     class Captain : public Player{
+        public:
         //Constructor:
         Captain(Game game, std::string name);
 
