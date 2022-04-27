@@ -9,6 +9,7 @@ namespace coup{
         Contessa(Game game, std::string name);
 
         //Functions:
+        //Blocks the Assassin from assasinating. 
         void block(Assassin& a1);
     };
 }
