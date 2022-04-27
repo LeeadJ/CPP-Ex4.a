@@ -7,7 +7,8 @@ namespace coup{
     }
 
     //Functions:
+    //Blocks the Assassin from assasinating. 
     void Contessa::block(Assassin& a1){
-        
+
     }
 }
