@@ -2,12 +2,12 @@
 
 namespace coup{
     //Construcor
-        Player::Player(Game& g, std::string name)
+        Player::Player(Game g, std::string name)
         {
             this->_myName=name;
             this->_myCoins=0;
-            this->_myGame = &g;
-            this->_myGame->_gamePlayers.push_back(name);
+            this->_myGame = g;
+            this->_myGame.players().push_back(name);
         }
         Player::~Player(){};
 
@@ -26,19 +26,19 @@ namespace coup{
         }
 
         //Eliminate a Player from his Role and remove him from the Game:
-        void Player::coup(Player p)
+        void Player::coup(Player& p) const
         {
             std::cout<< "Player::coup()" << std::endl;
         }
 
         //Returns the Players role:
-        std::string Player::role()
+        std::string Player::role() const
         {
             return this->_myRole;
         }
 
         //Returns the Players coin count:
-        int Player::coins()
+        int Player::coins() const
         {
             return this->_myCoins;
         }

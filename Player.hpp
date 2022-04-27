@@ -9,10 +9,10 @@ namespace coup{
         std::string _myName;
         std::string _myRole;
         int _myCoins;
-        Game* _myGame;
+        Game _myGame;
 
         //Construcor
-        Player(Game& g, std::string name);
+        Player(Game g, std::string name);
         ~Player(){};
 
         
@@ -24,13 +24,13 @@ namespace coup{
         void foreign_aid();
 
         //Eliminate a Player from his Role and remove him from the Game:
-        void coup(Player p);
+        void coup(Player& p) const;
 
         //Returns the Players role:
-        std::string role();
+        std::string role() const;
 
         //Returns the Players coin count:
-        int coins();
+        int coins() const;
 
 
 
