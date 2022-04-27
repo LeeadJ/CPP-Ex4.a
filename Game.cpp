@@ -3,7 +3,7 @@
 namespace coup{
     Game::Game(){
         _turn=0;
-        std::vector<std::string> _gamePlayers;
+        // std::vector<std::string> _gamePlayers;
     }
 
     //Returns the name of the current players turn:
@@ -16,7 +16,10 @@ namespace coup{
     }
     //Returns the name of the winner. Throws Error if the game isn't over:
     std::string Game::winner(){
-        return "";
+        if(this->players().size() != 1){
+            throw std::runtime_error("Game Wnner Error: Game is not over.");
+        }
+        return this->players().at(0);
     }
 
 }
