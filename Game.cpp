@@ -3,6 +3,7 @@
 namespace coup{
     Game::Game(){
         _turn=0;
+        std::vector<std::string> _gamePlayers;
     }
 
     //Returns the name of the current players turn:
