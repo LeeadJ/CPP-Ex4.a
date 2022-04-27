@@ -11,11 +11,11 @@ namespace coup{
         return "";
     }
     //Returns a vector of players currently in the game:
-    std::vector<std::string> Game::players(){
+    std::vector<std::string> Game::players() const{
         return this->_gamePlayers;
     }
     //Returns the name of the winner. Throws Error if the game isn't over:
-    std::string Game::winner(){
+    std::string Game::winner() const{
         if(this->players().size() != 1){
             throw std::runtime_error("Game Wnner Error: Game is not over.");
         }

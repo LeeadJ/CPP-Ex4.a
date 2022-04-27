@@ -2,7 +2,7 @@
 
 namespace coup{
     //Constructor:
-    Captain::Captain(Game game, std::string name) : Player(game, name){
+    Captain::Captain(const Game& game, const std::string& name) : Player(game, name){
         this->_myRole = "Captain";
     }
 
@@ -12,10 +12,7 @@ namespace coup{
 
     }
     //Blocks an Ambassador or a different Captain from stealing 2 coins.
-    void Captain::block(Ambassador& p){
-        
-    }
-    void Captain::block(Captain& c1){
+    void Captain::block(Player& p){
         
     }
 }

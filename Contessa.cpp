@@ -2,7 +2,7 @@
 
 namespace coup{
     //Constructor:
-    Contessa::Contessa(Game game, std::string name) : Player(game, name){
+    Contessa::Contessa(const Game& game, const std::string& name) : Player(game, name){
         this->_myRole = "Contessa";
     }
 

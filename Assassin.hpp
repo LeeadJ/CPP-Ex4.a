@@ -4,7 +4,7 @@ namespace coup{
     class Assassin : public Player{
         public:
         //Constructor
-        Assassin(Game game, std::string name);
+        Assassin(const Game& game, const std::string& name);
 
         //Functions
         void kill(Player& p);

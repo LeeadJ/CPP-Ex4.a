@@ -5,7 +5,7 @@ namespace coup{
     class Duke : public Player{
         public:
         //Constructor:
-        Duke(Game game, std::string name);
+        Duke(const Game& game, const std::string& name);
 
         //Functions:
         //Takes tax of 3 coins from the pile.
