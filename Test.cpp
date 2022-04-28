@@ -62,7 +62,7 @@ TEST_CASE("Round 2"){
 
 }
 
-TEST_CASE("Round 3"){
+TEST_CASE("Round 3 "){
     CHECK_NOTHROW(duke.income());
     CHECK_NOTHROW(assassin.income());
     CHECK_NOTHROW(ambassador.income());
