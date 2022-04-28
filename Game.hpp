@@ -6,13 +6,13 @@
 namespace coup{
     class Game{
         public:
-        //Variables:
-        std::vector<std::string> _gamePlayers;
-        int _turn;
+        // //Variables:
+        // std::vector<std::string> _gamePlayers;
+        // int _turn;
 
         //Constructor:
         Game();
-        ~Game();
+        // ~Game();
 
         //Returns the name of the current players turn:
         static std::string turn();
