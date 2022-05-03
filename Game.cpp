@@ -1,28 +1,39 @@
 #include "Game.hpp"
 
 namespace coup{
-    Game::Game(){
-        // _turn=0;
-        // std::vector<std::string> _gamePlayers;
+    
+    //Returns the name of the current players turn:
+    std::string Game::turn() const{
+        return this->players()[(unsigned int)this->getTurn()];
     }
 
-    //Returns the name of the current players turn:
-    std::string Game::turn(){
-        return "";
-    }
     //Returns a vector of players currently in the game:
     std::vector<std::string> Game::players() const{
-        // return this->_gamePlayers;
-        std::vector<std::string> ans;
-        return ans;
+        return this->getPlayerNameVec();
     }
+
     //Returns the name of the winner. Throws Error if the game isn't over:
-    std::string Game::winner() const{
-        // if(this->players().size() != 1){
-        //     throw std::runtime_error("Game Wnner Error: Game is not over.");
-        // }
-        // return this->players().at(0);
-        return "Winner";
+    std::string Game::winner() {
+        if(this->getGameSize() != 1){
+            throw std::runtime_error("Game Wnner Error: Game is not over.");
+        }
+        return this->players()[0];
+    }
+
+    //Adds a player to the game:
+    void Game::addPlayer(const Player& p){
+        this->getPlayersVec().push_back(p);
+        this->getPlayerNameVec().push_back(p.getName());
+    }
+
+    //Updates the current turn:
+    void Game::updateTurn(){
+        this->_turn++;
+    }
+
+    //Addes a player to the Coup Map:
+    void Game::addPlayer_coupMap(const Player& p){
+        this->getPlayersCouped()[p.getName()] = p;
     }
 
 }
