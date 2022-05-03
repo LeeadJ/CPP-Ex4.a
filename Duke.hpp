@@ -8,9 +8,10 @@ namespace coup{
         Duke(const Game& game, const std::string& name);
 
         //Functions:
-        //Takes tax of 3 coins from the pile.
+        //Takes tax of 3 coins from the pile:
         void tax();
-        //Blocks a player from taking 2 coins (using foreign_aid)
+
+        //Blocks a player from taking 2 coins (using foreign_aid):
         void block(Player& p);
     };
 
