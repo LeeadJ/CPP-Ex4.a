@@ -7,6 +7,6 @@ namespace coup{
         Assassin(const Game& game, const std::string& name);
 
         //Functions
-        void kill(Player& p);
+        void coup(Player& p);
     };
 }
