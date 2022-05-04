@@ -14,7 +14,7 @@ namespace coup{
     //Blocks a player from taking 2 coins (using foreign_aid)
     void Duke::block(Player& p){
         if(p.getPreviousTurn().compare("foreign_aid") != 0){
-            throw std::runtime_error("Duke block() Error: Players previous turn is not foreign_aid().");
+            throw std::runtime_error("Duke block() Error: Players previous turn was not foreign_aid(). Player can not be blocked!");
         }
         p.setCoins(p.coins()-2);
     }
