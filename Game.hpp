@@ -21,7 +21,7 @@ namespace coup{
             std::vector<std::string> getPlayerNameVec() const {return this->_playerNameVec;}
             int getGameSize() const { return this->getPlayersVec().size();}
             int getTurn() const {return this->_turn;}
-            std::map<std::string, Player> getPlayersCouped() const {return this->_playersCouped;}
+            std::map<std::string, Player> getPlayersEliminatedMap() const {return this->_playersCouped;}
 
             //Constructor:
             Game() : _turn(0){}
@@ -43,7 +43,7 @@ namespace coup{
             //Updates the current turn:
             void updateTurn();
 
-            //Addes a player to the Coup Map:
-            void addPlayer_coupMap(const Player& p);
+            // //Addes a player to the Coup Map:
+            // void addPlayer_coupMap(const Player& p);
     };
 }

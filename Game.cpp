@@ -31,9 +31,9 @@ namespace coup{
         this->_turn++;
     }
 
-    //Addes a player to the Coup Map:
-    void Game::addPlayer_coupMap(const Player& p){
-        this->getPlayersCouped()[p.getName()] = p;
-    }
+    // //Addes a player to the Coup Map:
+    // void Game::addPlayer_coupMap(const Player& p){
+    //     this->getPlayersCouped()[p.getName()] = p;
+    // }
 
 }
