@@ -41,7 +41,7 @@ namespace coup{
         cap.setCoins(cap.coins()-2); //Removing the different captains steal.
         cap.getVictimStack().top().setCoins(cap.getVictimStack().top().coins()+2); //Returning the stolen coins.
         cap.getVictimStack().pop(); //Removing the victim from the captain who stoles stack.
-        cap.setPreviousTurn("Steal was Blocked");
+        cap.setPreviousTurn("Blocked from steal");
     }
     
 }
