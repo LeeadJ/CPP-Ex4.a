@@ -20,7 +20,7 @@ namespace coup{
             if(&(this->getGame().getPlayersVec()[i]) == &p){
                 this->getGame().getPlayerNameVec().erase(this->getGame().getPlayerNameVec().begin()+i); //Erasing the name from the nameVec
                 this->getGame().getPlayersVec().erase(this->getGame().getPlayersVec().begin()+i); //Erasing from playersVec
-                this->getGame().addPlayer_coupMap(p);
+                this->getGame().getPlayersEliminatedMap()[p.getName()] = p; //add the victim to the eliminated map
                 break;
             }
         } 
