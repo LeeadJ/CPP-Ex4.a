@@ -24,6 +24,13 @@ namespace coup{
                 break;
             }
         } 
+        //Check if the stack is empty
+        while(this->getVictimStack().size() != 0){
+            this->getVictimStack().pop();
+        }
+        //add the victim to the victim stack:
+        this->getVictimStack().push(p);
+        //cost of the assassination: 3 coins:
         this->setCoins(this->coins()-3);
         this->setPreviousTurn("coup");
     }
