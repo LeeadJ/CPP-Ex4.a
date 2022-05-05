@@ -25,18 +25,23 @@ namespace coup{
         this->setPreviousTurn("steal");
     }
 
-    //Blocks an Ambassador or a different Captain from stealing 2 coins.
-    void Captain::block(Player& p){
+    //Blocks a different Captain from stealing 2 coins. Does not waste turn.
+    void Captain::block(Captain& cap){
         const std::vector<Player>& v = this->getGame().getPlayersVec(); 
-        if(std::find(v.begin(), v.end(), p) == v.end()){
-            throw std::runtime_error("Captain steal() Error: Player to steal not in the game.");
+        if(std::find(v.begin(), v.end(), cap) == v.end()){
+            throw std::runtime_error("Captain block() Error: Different Captain to block not in the game.");
         }
-        if(p.getPreviousTurn().compare("steal") != 0){
+        if(cap.getPreviousTurn().compare("steal") != 0){
             throw std::runtime_error("Captain block() Error: Captain to block previous turn was not steal. Captain to block can not be blocked!");
         }
+        if(cap.coins() < 2){
+            throw std::runtime_error("Captain block() Error: Captain to be blocked doesn't have 2 coins to return.");
+        }
         //Block can be made, undoing Block:
-        this->setCoins(this->getCoins()-2); //Removing the captains steal.
-        this->getVictimStack().top().setCoins(this->getVictimStack().top().getCoins()+2); //Returning the stolen coins.
-        this->getVictimStack().pop(); //Removing the victim from the stack.
+        cap.setCoins(cap.coins()-2); //Removing the different captains steal.
+        cap.getVictimStack().top().setCoins(cap.getVictimStack().top().coins()+2); //Returning the stolen coins.
+        cap.getVictimStack().pop(); //Removing the victim from the captain who stoles stack.
+        cap.setPreviousTurn("Steal was Blocked");
     }
+    
 }
