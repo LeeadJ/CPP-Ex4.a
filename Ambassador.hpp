@@ -1,5 +1,6 @@
 #pragma once
 #include "Player.hpp"
+#include "Captain.hpp"
 
 
 namespace coup{
@@ -13,7 +14,7 @@ namespace coup{
         //Transfers a coin from one player to another.
         void transfer(Player& p1, Player& p2);
         //Blocks the Captain from stealing 2 coins.
-        void block(Player& p);
+        void block(Captain& cap);
         
 
     };
