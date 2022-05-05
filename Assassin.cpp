@@ -16,14 +16,17 @@ namespace coup{
         if(this->coins() < 3){
             throw std::runtime_error("Assassin coup() Error: Not enough coins to use coup().");
         }
+        //Removing the Player from the game:
         for(int i=0; i<this->getGame().getGameSize(); i++){
             if(&(this->getGame().getPlayersVec()[i]) == &p){
-                this->getGame().getPlayerNameVec().erase(this->getGame().getPlayerNameVec().begin()+i); //Erasing the name from the nameVec
-                this->getGame().getPlayersVec().erase(this->getGame().getPlayersVec().begin()+i); //Erasing from playersVec
+                //Erasing the victims name from the game PlayernameVec:
+                this->getGame().getPlayerNameVec().erase(this->getGame().getPlayerNameVec().begin()+i); 
+                //Erasing the victims name from the game playersVec:
+                this->getGame().getPlayersVec().erase(this->getGame().getPlayersVec().begin()+i); 
                 break;
             }
         } 
-        //Check if the stack is empty
+        //Check if the victim stack is empty:
         while(this->getVictimStack().size() != 0){
             this->getVictimStack().pop();
         }
