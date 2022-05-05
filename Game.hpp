@@ -12,7 +12,7 @@ namespace coup{
         std::vector<Player> _playersVec;
         std::vector<std::string> _playerNameVec;
         int _turn;
-        std::map<std::string, Player> _playersCouped;
+        // std::map<std::string, Player> _playersCouped;
 
 
         public:
@@ -21,7 +21,7 @@ namespace coup{
             std::vector<std::string> getPlayerNameVec() const {return this->_playerNameVec;}
             int getGameSize() const { return this->getPlayersVec().size();}
             int getTurn() const {return this->_turn;}
-            std::map<std::string, Player> getPlayersEliminatedMap() const {return this->_playersCouped;}
+            // std::map<std::string, Player> getPlayersEliminatedMap() const {return this->_playersCouped;}
 
             //Constructor:
             Game() : _turn(0){}
