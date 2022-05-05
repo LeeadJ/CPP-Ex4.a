@@ -10,6 +10,6 @@ namespace coup{
 
         //Functions:
         //Blocks the Assassin from assasinating. 
-        void block(Assassin& a1);
+        void block(Assassin& ass);
     };
 }
