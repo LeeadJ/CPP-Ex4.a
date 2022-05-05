@@ -16,12 +16,14 @@ namespace coup{
         if(p.coins() < 2){
             throw std::runtime_error("Captain steal() Error: Victim does not enough coins.");
         }
-        p.setCoins(p.getCoins()-2);
-        this->setCoins(this->getCoins()+2);
-        if(this->_victimStack.size() != 0){
-            this->_victimStack.pop();
+        p.setCoins(p.coins()-2);
+        this->setCoins(this->coins()+2);
+        //Check if the victim stack is empty:
+        while(this->getVictimStack().size() != 0){
+            this->getVictimStack().pop();
         }
-        this->_victimStack.push(p);
+        //add the victim to the victim stack:
+        this->getVictimStack().push(p);
         this->setPreviousTurn("steal");
     }
 
